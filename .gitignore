@@ -1,0 +1,78 @@
+######################################################################
+# THIS GITIGNORE FILE IS FOR BOTH THE FRONTEND AND BACKEND REPOS     #
+######################################################################
+
+######################################################################
+# --------------------------- CREATE  -------------------------------#
+# THESE ARE USED FOR SECURELY STORING SENSITIVE INFORMATION IN THE   #
+# ENVIRONMENT VARIABLES, SO YOU WILL NEED TO CREATE THEM.            #
+######################################################################
+
+# ----------                                              ---------- #
+# THIS FOLDER IS FOR THE STORAGE OF THE CERTIFICATES AND KEYS
+.keys
+# THIS IS WHERE YOU STORE YOUR DOCKER CONFIGURATION FILES
+.docker
+# THIS IS WHERE YOU STORE YOUR ENVIRONMENT VARIABLES, JUST COPY THE
+# .env.example FILE AND RENAME IT TO .env
+.env
+# THIS IS A YAML FOLDER
+.yml
+# THIS IS A JSON FOLDER
+.json
+# THIS IS THE MEDIA ASSETS FOLDER
+.media
+# JWT CONTSANTS
+/src/security/jwt.constants.ts
+# DOCS
+/docs
+# ----------                                              ---------- #
+
+######################################################################
+# ------------------------- DONT CREATE -----------------------------#
+######################################################################
+
+# ----------                                              ---------- #
+# THIS IS WHERE THE FRONTEND CODE IS COMPILED TO AND WILL BE
+# AUTOMATICALLY CREATED BY THE ANGULAR CLI
+/wwww
+# DEFAULT FOLDER FOR THE BACKEND CODE
+/dist
+#----------                                               ---------- #
+
+######################################################################
+# --------------------------- IGNORE  -------------------------------#
+# THESE ARE USED FOR IGNORING FILES AND FOLDERS THAT ARE NOT NEEDED  #
+# IN THE REPOSITORY. EVERYTHING IN THESE FILES WILL BE IGNORED.      #
+# AND ARE IGNORE DEFAULTS.                                           #
+######################################################################
+/tmp
+/out-tsc
+/bazel-out
+/alpha_portal/node_modules
+/node_modules
+npm-debug.log
+yarn-error.log
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+.DS_Store
+Thumbs.db
+.angular
