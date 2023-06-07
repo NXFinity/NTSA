@@ -1,6 +1,10 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import * as joi from 'joi';
+import { MongooseModule } from '@nestjs/mongoose';
+import { UsersModule } from './api/users/users.module';
+import { AuthModule } from './security/auth/auth.module';
+
 
 @Module({
   // This module imports necessary modules and initializes the app
@@ -17,7 +21,11 @@ import { AppService } from './app.service';
           .valid('development', 'production', 'test')
           .default('development'),
         PORT: joi.number().default(3021),
+        // DATABASE URI
         MONGODB_URI: joi.string().required(),
+        // JWT VALIDATION
+        JWT_SECRET: joi.string().required(),
+        JWT_EXPIRATION_TIME: joi.string().required(),
       }),
     }),
     // Connects to MongoDB database
@@ -29,6 +37,8 @@ import { AppService } from './app.service';
       }),
     }),
     // Imports other modules
+    AuthModule,
+    UsersModule,
   ],
   // Registers controllers
   controllers: [],
